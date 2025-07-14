@@ -1,1 +1,1 @@
-# teri-project
+# chatGPT-clone-using-gemini-chatgpt-api
