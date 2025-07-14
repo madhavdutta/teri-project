@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiZap, FiStar } from 'react-icons/fi';
+import { FiCpu, FiStar } from 'react-icons/fi';
 
 const Logo = ({ size = 'medium', className = '' }) => {
   const sizeClasses = {
@@ -19,14 +19,14 @@ const Logo = ({ size = 'medium', className = '' }) => {
   return (
     <div className={`${sizeClasses[size]} ${className} relative flex items-center justify-center`}>
       {/* Main logo circle with gradient */}
-      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 shadow-2xl animate-pulse"></div>
+      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-400 via-purple-500 to-indigo-600 shadow-2xl animate-pulse"></div>
       
       {/* Inner glow effect */}
       <div className="absolute inset-1 rounded-full bg-gradient-to-br from-white/20 to-transparent backdrop-blur-sm"></div>
       
       {/* Icon container */}
       <div className="relative z-10 flex items-center justify-center text-white">
-        <FiZap size={iconSizes[size]} className="animate-pulse" />
+        <FiCpu size={iconSizes[size]} className="animate-pulse" />
         <FiStar size={iconSizes[size] * 0.6} className="absolute top-0 right-0 text-yellow-300 animate-bounce" />
       </div>
       

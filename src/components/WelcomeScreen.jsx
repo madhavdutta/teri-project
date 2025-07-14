@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { FiMessageCircle, FiSettings, FiKey, FiBookOpen, FiFeather, FiStar, FiHeart, FiZap, FiGlobe } from 'react-icons/fi';
+import { FiMessageCircle, FiSettings, FiKey, FiBookOpen, FiCpu, FiStar, FiHeart, FiZap, FiGlobe } from 'react-icons/fi';
 import { ChatContext } from '../context/ChatContext';
 import ApiKeyModal from './ApiKeyModal';
 
@@ -7,50 +7,50 @@ const WelcomeScreen = () => {
   const { apiKey, sendMessage } = useContext(ChatContext);
   const [showApiKeyModal, setShowApiKeyModal] = useState(false);
 
-  const storytellerIceBreakers = [
+  const aiIceBreakers = [
     {
-      icon: <FiFeather className="w-5 h-5" />,
-      title: "Character Development",
-      prompt: "Help me create a compelling character with a unique backstory, personality traits, and motivations for my story.",
-      category: "Character"
+      icon: <FiCpu className="w-5 h-5" />,
+      title: "Code Assistant",
+      prompt: "Help me write clean, efficient code and explain programming concepts in a way that's easy to understand.",
+      category: "Coding"
     },
     {
       icon: <FiBookOpen className="w-5 h-5" />,
-      title: "Plot Structure",
-      prompt: "I have a story idea but need help structuring the plot. Can you guide me through creating a three-act structure with key plot points?",
-      category: "Plot"
+      title: "Learning Support",
+      prompt: "I want to learn something new. Can you create a structured learning plan and guide me through it step by step?",
+      category: "Learning"
     },
     {
       icon: <FiGlobe className="w-5 h-5" />,
-      title: "World Building",
-      prompt: "I'm creating a fantasy/sci-fi world. Help me develop the setting, rules, culture, and history that will make it feel authentic and immersive.",
-      category: "World"
+      title: "Research Helper",
+      prompt: "Help me research a topic thoroughly, providing accurate information and multiple perspectives on the subject.",
+      category: "Research"
     },
     {
       icon: <FiZap className="w-5 h-5" />,
-      title: "Dialogue Mastery",
-      prompt: "My dialogue feels flat. Can you help me write more natural, engaging conversations that reveal character and advance the plot?",
-      category: "Dialogue"
+      title: "Problem Solver",
+      prompt: "I have a complex problem that needs solving. Can you help me break it down and find effective solutions?",
+      category: "Problem"
     },
     {
       icon: <FiStar className="w-5 h-5" />,
-      title: "Opening Hook",
-      prompt: "I'm struggling with my story's opening. Help me craft a compelling first chapter that hooks readers from the very first sentence.",
-      category: "Opening"
+      title: "Creative Ideas",
+      prompt: "I need creative inspiration and fresh ideas for my project. Help me brainstorm innovative approaches.",
+      category: "Creative"
     },
     {
       icon: <FiHeart className="w-5 h-5" />,
-      title: "Emotional Depth",
-      prompt: "How can I add more emotional depth to my story? Help me create scenes that will genuinely move readers and create lasting impact.",
-      category: "Emotion"
+      title: "Personal Assistant",
+      prompt: "Help me organize my tasks, plan my schedule, and provide guidance on personal productivity and well-being.",
+      category: "Personal"
     }
   ];
 
   const quickStarters = [
-    "What's the difference between showing vs telling in storytelling?",
-    "Help me overcome writer's block with creative exercises",
-    "How do I create realistic conflict in my story?",
-    "What makes a story ending satisfying for readers?"
+    "Explain a complex concept in simple terms",
+    "Help me debug this code issue",
+    "What are the latest trends in technology?",
+    "Give me tips for better productivity"
   ];
 
   const handleIceBreakerClick = async (prompt) => {
@@ -69,7 +69,7 @@ const WelcomeScreen = () => {
           <div className="text-center mb-12">
             <div className="relative mb-6">
               <div className="w-20 h-20 bg-gradient-storyteller rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-xl">
-                <FiFeather size={40} className="text-white" />
+                <FiCpu size={40} className="text-white" />
               </div>
               <div className="absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center">
                 <FiStar size={14} className="text-yellow-800" />
@@ -77,10 +77,10 @@ const WelcomeScreen = () => {
             </div>
             
             <h1 className="text-5xl font-bold mb-4 storyteller-text">
-              Welcome, Storyteller
+              Welcome to Teri Project
             </h1>
             <p className="text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed">
-              Your AI writing companion is here to help you craft compelling stories, develop rich characters, and bring your creative vision to life.
+              Your intelligent AI assistant is here to help you solve problems, learn new things, and boost your productivity with personalized support.
             </p>
           </div>
 
@@ -106,17 +106,17 @@ const WelcomeScreen = () => {
             </div>
           </div>
 
-          {/* Storyteller Ice Breakers */}
+          {/* AI Assistants */}
           <div className="mb-12">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold mb-3 text-text">Story Crafting Assistants</h2>
+              <h2 className="text-3xl font-bold mb-3 text-text">AI Assistance Categories</h2>
               <p className="text-text-secondary text-lg">
-                Choose a writing area where you'd like expert guidance and inspiration
+                Choose an area where you'd like intelligent support and guidance
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {storytellerIceBreakers.map((icebreaker, index) => (
+              {aiIceBreakers.map((icebreaker, index) => (
                 <div
                   key={index}
                   className="card-storyteller p-6 cursor-pointer transition-all duration-300 hover:scale-105 animate-slide-up group"
@@ -143,7 +143,7 @@ const WelcomeScreen = () => {
                     }
                   </p>
                   <div className="mt-4 flex items-center text-storyteller text-sm font-medium">
-                    <span>Start crafting</span>
+                    <span>Get started</span>
                     <FiZap className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
@@ -154,9 +154,9 @@ const WelcomeScreen = () => {
           {/* Quick Starters */}
           <div className="mb-12">
             <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold mb-2 text-text">Quick Writing Tips</h3>
+              <h3 className="text-2xl font-bold mb-2 text-text">Quick Help</h3>
               <p className="text-text-secondary">
-                Get instant advice on common storytelling challenges
+                Get instant assistance with common tasks and questions
               </p>
             </div>
             
@@ -186,14 +186,14 @@ const WelcomeScreen = () => {
                 <span className="font-semibold text-text">Powered by Advanced AI</span>
               </div>
               <p className="text-text-secondary text-sm leading-relaxed">
-                This storytelling assistant uses Google's Gemini AI to provide personalized writing guidance, 
-                character development insights, and creative inspiration tailored to your unique voice and style.
+                Teri Project uses Google's Gemini AI to provide intelligent assistance, 
+                personalized support, and expert guidance tailored to your specific needs and goals.
               </p>
               <div className="mt-4 flex items-center justify-center gap-4 text-xs text-muted">
-                <span>✨ Creative Writing</span>
-                <span>📚 Story Structure</span>
-                <span>🎭 Character Development</span>
-                <span>🌟 Plot Enhancement</span>
+                <span>🤖 AI Assistant</span>
+                <span>💡 Problem Solving</span>
+                <span>📚 Learning Support</span>
+                <span>⚡ Productivity</span>
               </div>
             </div>
           </div>

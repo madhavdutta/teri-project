@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { FiMenu, FiPlus, FiSettings, FiFeather } from 'react-icons/fi';
+import { FiMenu, FiPlus, FiSettings, FiCpu } from 'react-icons/fi';
 import { ChatContext } from '../context/ChatContext';
 import HeaderControls from './HeaderControls';
 import ApiKeyModal from './ApiKeyModal';
@@ -22,11 +22,11 @@ const Header = ({ onToggleSidebar }) => {
           
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-gradient-storyteller rounded-lg flex items-center justify-center">
-              <FiFeather size={16} className="text-white" />
+              <FiCpu size={16} className="text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-text">StoryForge AI</h1>
-              <p className="text-xs text-muted">Your Creative Writing Companion</p>
+              <h1 className="text-xl font-bold text-text">Teri Project</h1>
+              <p className="text-xs text-muted">Your AI Assistant</p>
             </div>
           </div>
         </div>
@@ -44,10 +44,10 @@ const Header = ({ onToggleSidebar }) => {
           <button
             onClick={createNewChat}
             className="btn-primary flex items-center gap-2"
-            aria-label="New story session"
+            aria-label="New chat session"
           >
             <FiPlus size={16} />
-            <span className="hidden sm:inline">New Story</span>
+            <span className="hidden sm:inline">New Chat</span>
           </button>
           
           <HeaderControls />
